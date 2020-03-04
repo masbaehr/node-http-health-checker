@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>node-http-health-checker</title>
+    <meta name="author" content="github.com/masbaehr">
+    <meta name="publisher" content="github.com/masbaehr">
+    <!-- Bulma Version 0.8.x-->
+    <link rel="stylesheet" href="css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/showcase.css" />
+    <link rel="stylesheet" type="text/css" href="css/fontawesome5.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+
+  <body>
+    <header class="hero is-light">
+      <div class="hero-head">
+      </div>
+    </header>
+    
+    <div class="section">
+      <div class="columns">
+        <aside class="column is-2">
+          <nav class="menu">
+            <p class="menu-label">
+              General
+            </p>
+            <ul class="menu-list">
+              <li><a class="is-active">Server 1</a></li>
+            </ul>
+          </nav>
+        </aside>
+        <main class="column">
+          <div class="level">
+            <div class="level-left">
+              <div class="level-item">
+                <div class="title">Dashboard</div>
+              </div>
+            </div>
+            <div class="level-right">
+              <div class="level-item">
+                <button type="button" class="button is-small">
+                  node-http-health-checker
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="columns is-multiline">
+            <div class="column">
+              <div class="box">
+                <div class="heading"><%= serverUrl %></div>
+                <div class="title" id="server-status"><%= serverStatus %></div>
+                <%if (serverStatus === 'DOWN!') { %>
+                <audio src="audio/analogwatch.mp3" autoplay>
+                </audio> 
+                <% } %>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script>
+      setTimeout(function(){
+        window.location.reload(1);
+      }, 2000);
+    </script>
+  </body>
+</html>
